@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style>
+        .main-word{
+            font-size: 13rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" >
+    <h1>max</h1>
+
+    <div class="row">
+        <button type="button" class="btn btn-success" id="start-btn">START</button>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn btn-info" id="next-btn">NEXT ></button>
+    </div>
+</div>
+
+<div class="container text-center" id="main-container">
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    var wordCount = 1;
+    console.log(wordCount);
+
+    $("#start-btn").on("click", function (event) {
+        event.preventDefault();
+        wordCount = 1;
+
+        console.log("start btn clicked");
+
+        nextWord();
+
+    })
+
+    $(document).keyup(function(event) {
+        console.log(wordCount);
+        var selectedKey = event.keyCode;
+        if(selectedKey === 39){
+            console.log("right arrow keyboard");
+            nextWord();
+        }
+
+    });
+
+
+
+    $("#next-btn").on("click", function (event) {
+        event.preventDefault();
+
+        nextWord();
+    })
+
+    function getColor(word){
+        if(word.color){
+            return ' style="color:' + word.color +'"'
+        }
+    }
+
+    function getImage(word) {
+        if(word.image){
+            return word.image
+        }
+    }
+
+    function nextWord(){
+        var currentWord = wordList[wordCount-1]
+
+
+        var wordHtml = "";
+        wordHtml += '<div class="main-word" '+ getColor(currentWord) +'>'+ currentWord.word +'</div>'
+        wordHtml += '<img src="'+ getImage(currentWord) +'" alt="">'
+            $("#main-container").html(wordHtml);
+
+        // setTimeout(function(){
+        //     var audio = new Audio(currentWord.audio);
+        //     audio.play();
+        // }, 2000);
+
+        wordCount +=1;
+    }
+
+
+    var wordList = [
+        {
+            id: 1,
+            word: "I",
+            audio: "audio/i.mp3",
+            image:"",
+            semester: 1
+        },
+        {
+            id: 2,
+            word: "red",
+            audio: "audio/red.mp3",
+            image: "",
+            semester: 1,
+            color: "red"
+        },
+        {
+            id: 3,
+            word: "up",
+            audio: "audio/up.mp3",
+            image: "",
+            semester: 1
+        },
+        {
+            id: 4,
+            word: "yellow",
+            audio: "audio/yellow.mp3",
+            image: "",
+            semester: 1,
+            color: "yellow"
+        },
+        {
+            id: 5,
+            word: "little",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1
+        },
+        {
+            id: 6,
+            word: "no",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1
+        },
+        {
+            id: 7,
+            word: "come",
+            audio: "audio/little.mp3",
+            image: "img/come.jpg",
+            semester: 1
+        },
+        {
+            id: 8,
+            word: "am",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1
+        },
+        {
+            id: 9,
+            word: "orange",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: "orange"
+        },
+        {
+            id: 10,
+            word: "a",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 11,
+            word: "the",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 12,
+            word: "blue",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: "blue"
+        },
+        {
+            id: 13,
+            word: "green",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: "green"
+        },
+        {
+            id: 14,
+            word: "we",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 15,
+            word: "down",
+            audio: "audio/little.mp3",
+            image: "img/down-arrow.png",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 16,
+            word: "yes",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 17,
+            word: "can",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 18,
+            word: "me",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 19,
+            word: "go",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 20,
+            word: "look",
+            audio: "audio/little.mp3",
+            image: "",
+            semester: 1,
+            color: null
+        }
+    ]
+</script>
+
+</body>
+</html>
