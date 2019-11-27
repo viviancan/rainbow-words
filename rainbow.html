@@ -12,7 +12,7 @@
 
     <style>
         .main-word{
-            font-size: 13rem;
+            font-size: 10rem;
         }
     </style>
 </head>
@@ -21,13 +21,27 @@
 <div class="container" >
     <h1>max</h1>
 
-    <div class="row">
-        <button type="button" class="btn btn-success" id="start-btn">START</button>
+    <div class="row mt-3">
+        <div class="col-6">
+            <button type="button" class="btn btn-success" id="start-btn">START</button>
+
+        </div>
+
+        <div class="col-6">
+            <label for="six-weeks-select">Which 6 weeks?</label>
+            <select class="custom-select" id="six-weeks-select">
+                <option disabled selected>Choose</option>
+                <option value="all">All Words</option>
+                <option value="1">1st 6 Weeks</option>
+                <option value="2">2nd 6 Weeks</option>
+            </select>
+        </div>
     </div>
 
-    <div class="row">
-        <button type="button" class="btn btn-info" id="next-btn">NEXT ></button>
-    </div>
+<!--    <div class="row mt-3">-->
+<!--        <button type="button" class="btn btn-info" id="next-btn">NEXT ></button>-->
+<!--    </div>-->
+
 </div>
 
 <div class="container text-center" id="main-container">
@@ -39,10 +53,384 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocktimer/1.0.12/tock.js"></script>
 <script>
-    var wordCount = 1;
-    console.log(wordCount);
+    "use strict";
+    var wordList = [
+        {
+            id: 1,
+            word: "I",
+            audio: "audio/i.mp3",
+            image:"",
+            semester: 1
+        },
+        {
+            id: 2,
+            word: "red",
+            audio: "audio/red.mp3",
+            image: null,
+            semester: 1,
+            color: "red"
+        },
+        {
+            id: 3,
+            word: "up",
+            audio: "audio/up.mp3",
+            image: null,
+            semester: 1
+        },
+        {
+            id: 4,
+            word: "yellow",
+            audio: "audio/yellow.mp3",
+            image: null,
+            semester: 1,
+            color: "yellow"
+        },
+        {
+            id: 5,
+            word: "little",
+            audio: "audio/little.mp3",
+            image: null,
+            semester: 1,
+            color: null
+
+        },
+        {
+            id: 6,
+            word: "no",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 7,
+            word: "come",
+            audio: null,
+            image: "img/come.jpg",
+            semester: 1,
+            color: null
+
+        },
+        {
+            id: 8,
+            word: "am",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 9,
+            word: "orange",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: "orange"
+        },
+        {
+            id: 10,
+            word: "a",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 11,
+            word: "the",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 12,
+            word: "blue",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: "blue"
+        },
+        {
+            id: 13,
+            word: "green",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: "green"
+        },
+        {
+            id: 14,
+            word: "we",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 15,
+            word: "down",
+            audio: null,
+            image: "img/down-arrow.png",
+            semester: 1,
+            color: null
+        },
+        {
+            id: 16,
+            word: "yes",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 17,
+            word: "can",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 18,
+            word: "me",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 19,
+            word: "go",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 20,
+            word: "look",
+            audio: null,
+            image: null,
+            semester: 1,
+            color: null
+        },
+        {
+            id: 21,
+            word: "at",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: null
+        },
+        {
+            id: 22,
+            word: "said",
+            audio: null,
+            image: "img/said.png",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 23,
+            word: "jump",
+            audio: null,
+            image: "img/jump.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 24,
+            word: "girl",
+            audio: null,
+            image: "img/girl.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 25,
+            word: "see",
+            audio: null,
+            image: "img/see.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 26,
+            word: "did",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: null
+        },
+        {
+            id: 27,
+            word: "boy",
+            audio: null,
+            image: "img/boy.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 28,
+            word: "on",
+            audio: null,
+            image: "img/on.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 29,
+            word: "here",
+            audio: null,
+            image: "img/here.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 30,
+            word: "white",
+            audio: null,
+            image: "img/white.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 31,
+            word: "like",
+            audio: null,
+            image: "img/heart.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 32,
+            word: "to",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: null
+        },
+        {
+            id: 33,
+            word: "purple",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: "purple"
+        },
+        {
+            id: 34,
+            word: "black",
+            audio: null,
+            image: "img/black.jpg",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 35,
+            word: "is",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: null
+        },
+        {
+            id: 36,
+            word: "brown",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: "#673030"
+        },
+        {
+            id: 37,
+            word: "will",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: null
+        },
+        {
+            id: 38,
+            word: "big",
+            audio: null,
+            image: "img/hulk.png",
+            semester: 2,
+            color: null
+        },
+        {
+            id: 39,
+            word: "for",
+            audio: null,
+            image: null,
+            semester: 2,
+            color: null
+        },
+        {
+            id: 40,
+            word: "help",
+            audio: null,
+            image: "img/help.png",
+            semester: 2,
+            color: null
+        },
+    ]
+
+    var wordCount = 0;
+
+    var shuffledWordList = shuffleArray(wordList)
+    console.log(shuffledWordList);
+    console.log(shuffledWordList.length);
+
+    var timer = new Tock({
+        callback:  function () {
+            var current_time = timer.msToTime(timer.lap());
+        }
+    });;
+    console.log(timer);
+
+    $("#six-weeks-select").on('change', function () {
+        var sixWeeksSelect = this.value;
+        shuffledWordList = shuffleArray(wordList)
+        wordCount = 0;
+        $("#main-container").html("");
+
+
+        if (sixWeeksSelect !== "all"){
+            console.log("does not equal");
+            shuffledWordList = shuffledWordList.filter(function (word) {
+                 return word.semester === parseInt(sixWeeksSelect);
+            });
+        }
+
+            console.log(shuffledWordList);
+            nextWord();
+
+    })
+
+
+
+    // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+    /**
+     * Randomize array element order in-place.
+     * Using Durstenfeld shuffle algorithm.
+     */
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        return array
+    }
+
+
+
 
     $("#start-btn").on("click", function (event) {
         event.preventDefault();
@@ -55,10 +443,9 @@
     })
 
     $(document).keyup(function(event) {
-        console.log(wordCount);
+        console.log("current word count: " + wordCount);
         var selectedKey = event.keyCode;
         if(selectedKey === 39){
-            console.log("right arrow keyboard");
             nextWord();
         }
 
@@ -79,19 +466,56 @@
     }
 
     function getImage(word) {
-        if(word.image){
-            return word.image
+        if(word.image != null){
+            return '<img style="height: 200px;" src="'+ word.image +'" alt="">'
+        } else {
+            return "";
         }
     }
 
-    function nextWord(){
-        var currentWord = wordList[wordCount-1]
+    function createEndHtml(endTime){
+        var html = "";
+        html += '<div>'
+        html += '<h1>No more words!</h1>'
+        html += '<h4>Total Time: ' + endTime + '</h4>'
+        html += '</div>';
 
+        return html
+    }
+
+    function getEndTime(){
+        timer.stop();
+        var endTime = timer.msToTime(timer.lap());
+        console.log(endTime);
+        return endTime
+    }
+
+    function endGame(){
+        var endTime = getEndTime()
+        var endHtml = createEndHtml(endTime)
+        $("#main-container").html(endHtml)
+    }
+
+    function nextWord(){
+
+        if (wordCount === shuffledWordList.length) {
+            endGame();
+            return;
+        }
+
+
+        if(wordCount === 0){
+            console.log("timer starting");
+            timer.start();
+        }
+
+        var currentWord = shuffledWordList[wordCount]
+        console.log(currentWord);
 
         var wordHtml = "";
         wordHtml += '<div class="main-word" '+ getColor(currentWord) +'>'+ currentWord.word +'</div>'
-        wordHtml += '<img src="'+ getImage(currentWord) +'" alt="">'
-            $("#main-container").html(wordHtml);
+        wordHtml += getImage(currentWord)
+        $("#main-container").html(wordHtml);
 
         // setTimeout(function(){
         //     var audio = new Audio(currentWord.audio);
@@ -102,162 +526,7 @@
     }
 
 
-    var wordList = [
-        {
-            id: 1,
-            word: "I",
-            audio: "audio/i.mp3",
-            image:"",
-            semester: 1
-        },
-        {
-            id: 2,
-            word: "red",
-            audio: "audio/red.mp3",
-            image: "",
-            semester: 1,
-            color: "red"
-        },
-        {
-            id: 3,
-            word: "up",
-            audio: "audio/up.mp3",
-            image: "",
-            semester: 1
-        },
-        {
-            id: 4,
-            word: "yellow",
-            audio: "audio/yellow.mp3",
-            image: "",
-            semester: 1,
-            color: "yellow"
-        },
-        {
-            id: 5,
-            word: "little",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1
-        },
-        {
-            id: 6,
-            word: "no",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1
-        },
-        {
-            id: 7,
-            word: "come",
-            audio: "audio/little.mp3",
-            image: "img/come.jpg",
-            semester: 1
-        },
-        {
-            id: 8,
-            word: "am",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1
-        },
-        {
-            id: 9,
-            word: "orange",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: "orange"
-        },
-        {
-            id: 10,
-            word: "a",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 11,
-            word: "the",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 12,
-            word: "blue",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: "blue"
-        },
-        {
-            id: 13,
-            word: "green",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: "green"
-        },
-        {
-            id: 14,
-            word: "we",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 15,
-            word: "down",
-            audio: "audio/little.mp3",
-            image: "img/down-arrow.png",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 16,
-            word: "yes",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 17,
-            word: "can",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 18,
-            word: "me",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 19,
-            word: "go",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        },
-        {
-            id: 20,
-            word: "look",
-            audio: "audio/little.mp3",
-            image: "",
-            semester: 1,
-            color: null
-        }
-    ]
+
 </script>
 
 </body>
