@@ -1,0 +1,38 @@
+.main-word{
+    font-size: 7rem;
+}
+
+.btn-circle.btn-xl {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    font-size: 1.5em;
+    line-height: 1.33;
+}
+
+#train-all-btn{
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+#train-first-btn{
+    background-color: lightcoral;
+    border-color: lightcoral;
+}
+
+#train-second-btn{
+    background-color: darkseagreen;
+    border-color: darkseagreen;
+}
+
+.hide-this{
+    display: none;
+}
+
+.show-this{
+    display: block;
+}
+
+.six-week-col{
+    margin-bottom: 10px;
+}
