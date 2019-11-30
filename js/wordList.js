@@ -27,7 +27,7 @@ var wordList = [
 		audio: "audio/yellow.mp3",
 		image: null,
 		semester: 1,
-		color: "yellow"
+		color: "#ffe027"
 	},
 	{
 		id: 5,
