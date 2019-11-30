@@ -1,3 +1,6 @@
+html, body{
+    height: 100vh;
+}
 .main-word{
     font-size: 6rem;
 }
