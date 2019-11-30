@@ -1,5 +1,5 @@
 .main-word{
-    font-size: 7rem;
+    font-size: 6rem;
 }
 
 .btn-circle.btn-xl {
@@ -35,4 +35,14 @@
 
 .six-week-col{
     margin-bottom: 10px;
+}
+
+.container-size{
+    height: 60vh;
+}
+
+@media (min-width: 767px) {
+    .main-word{
+        font-size: 8rem;
+    }
 }
