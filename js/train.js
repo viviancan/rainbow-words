@@ -52,6 +52,7 @@ $(document).ready(function () {
 		$("#six-weeks-row").addClass('hide-this');
 		$("#next-btn-row").addClass('show-this');
 		$("#main-container").html("");
+		$("#word-container").addClass('container-size')
 	}
 
 
@@ -109,7 +110,9 @@ $(document).ready(function () {
 		var endHtml = createEndHtml(endTime);
 		$("#six-weeks-row").removeClass('hide-this');
 		$("#next-btn-row").removeClass('show-this').addClass('hide-this');
-		$("#main-container").html(endHtml)
+		$("#main-container").html(endHtml);
+		$("#word-container").removeClass('container-size')
+
 	}
 
 	function createWordHtml(currentWord){
