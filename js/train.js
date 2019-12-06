@@ -9,6 +9,8 @@ $(document).ready(function () {
 	let searchParams = new URLSearchParams(window.location.search);
 	var testingTrue = searchParams.has('test');
 
+	setTypeHtml();
+
 	var timer = new Tock({
 		callback:  function () {
 			var current_time = timer.msToTime(timer.lap());
@@ -23,7 +25,7 @@ $(document).ready(function () {
 	});
 
 
-	$("#train-first-btn, #train-second-btn").on("click", function () {
+	$(".train-btn").on("click", function () {
 		var sixWeeksVal = $(this).data("id");
 		setGame();
 		shuffledWordList = filterWords(sixWeeksVal);
@@ -45,6 +47,19 @@ $(document).ready(function () {
 	});
 
 	//FUNCTIONS
+	function setTypeHtml(){
+		var wordHtml = "";
+		if(testingTrue){
+			wordHtml += '<h2>Testing Mode</h2>';
+			wordHtml += '<h2>Select a set of words</h2>';
+		} else {
+			wordHtml += '<h2>Training Mode: Words have visual hints.</h2>';
+			wordHtml += '<h2>Select a set of words</h2>';
+		}
+
+		$("#game-type-html").html(wordHtml);
+	}
+
 
 	function setGame(){
 		shuffledWordList = shuffleArray(wordList);
@@ -143,7 +158,8 @@ $(document).ready(function () {
 		wordCount +=1;
 	}
 
-
+	// https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
+	// Swipe Functionality
 	document.addEventListener('touchstart', handleTouchStart, false);
 	document.addEventListener('touchmove', handleTouchMove, false);
 
