@@ -28,6 +28,16 @@ body {
     border-color: darkseagreen;
 }
 
+#train-third-btn{
+    background-color: #756999;
+    border-color: #756999;
+}
+
+#train-fourth-btn{
+    background-color: goldenrod;
+    border-color: goldenrod;
+}
+
 .hide-this{
     display: none;
 }
