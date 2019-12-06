@@ -3,7 +3,7 @@ var wordList = [
 		id: 1,
 		word: "I",
 		audio: "audio/i.mp3",
-		image:"",
+		image: null,
 		semester: 1
 	},
 	{
@@ -319,4 +319,324 @@ var wordList = [
 		semester: 2,
 		color: null
 	},
+	{
+		id: 41,
+		word: "play",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 42,
+		word: "run",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 43,
+		word: "it",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 44,
+		word: "went",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 45,
+		word: "have",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 46,
+		word: "you",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 47,
+		word: "are",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 48,
+		word: "she",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 49,
+		word: "want",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 50,
+		word: "in",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 51,
+		word: "out",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 52,
+		word: "this",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 53,
+		word: "and",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 54,
+		word: "not",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 55,
+		word: "was",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 56,
+		word: "good",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 57,
+		word: "all",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 58,
+		word: "he",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 59,
+		word: "going",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 60,
+		word: "where",
+		audio: null,
+		image: null,
+		semester: 3,
+		color: null
+	},
+	{
+		id: 61,
+		word: "my",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 62,
+		word: "from",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 63,
+		word: "do",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 64,
+		word: "back",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 65,
+		word: "after",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 66,
+		word: "ran",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 67,
+		word: "what",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 68,
+		word: "came",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 69,
+		word: "by",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 70,
+		word: "with",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 71,
+		word: "saw",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 72,
+		word: "very",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 73,
+		word: "away",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 74,
+		word: "too",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 75,
+		word: "now",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 76,
+		word: "as",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 77,
+		word: "us",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 78,
+		word: "some",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 79,
+		word: "they",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	},
+	{
+		id: 80,
+		word: "one",
+		audio: null,
+		image: null,
+		semester: 4,
+		color: null
+	}
 ];
