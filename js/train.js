@@ -30,6 +30,7 @@ $(document).ready(function () {
 		setGame();
 		shuffledWordList = filterWords(sixWeeksVal);
 		nextWord();
+
 	});
 
 
